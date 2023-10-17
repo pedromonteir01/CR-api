@@ -23,7 +23,15 @@ export default function Home() {
   return (
     <main>
       {
-        dadosAPI ? () : ();
+        dadosAPI ? (
+          dadosAPI.map((card) => (
+            <div>
+              <p>{card.name}</p>
+            </div>
+          ))
+        ) : (
+          <p>carregando...</p>
+        )
       }
     </main>
   )

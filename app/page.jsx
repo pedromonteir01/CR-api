@@ -6,6 +6,9 @@ import cards from '@/data/cardapi';
 import Card from './components/cards/Cards';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import CardList from '@/models/cardlist';
+
+const listApi = new CardList();
 
 export default function Home() {
 

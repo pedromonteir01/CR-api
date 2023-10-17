@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 import cards from '@/data/cardapi';
+import Card from './components/cards/Cards';
 
 export default function Home() {
 
@@ -21,13 +22,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main>
+    <main className={styles.container}>
       {
         dadosAPI ? (
-          dadosAPI.map((card) => (
-            <div>
-              <p>{card.name}</p>
-            </div>
+          dadosAPI.map((card) =>
+            card.name == 'Super Magic Archer' || card.name == 'Super Ice Golem' || card.name == 'Super Mini P.E.K.K.A' ? (
+              null
+            ) :
+          (
+            <Card name={card.name} image={card.iconUrls.medium} lvl={card.maxLevel}/>  
           ))
         ) : (
           <p>carregando...</p>

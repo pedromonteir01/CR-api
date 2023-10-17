@@ -4,6 +4,8 @@ import styles from './page.module.css'
 import { useEffect, useState } from 'react'
 import cards from '@/data/cardapi';
 import Card from './components/cards/Cards';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 export default function Home() {
 
@@ -22,7 +24,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.container}>
+    <div>
+      <Header/>
+      <main className={styles.container}>
       {
         dadosAPI ? (
           dadosAPI.map((card) =>
@@ -36,6 +40,8 @@ export default function Home() {
           <p>carregando...</p>
         )
       }
-    </main>
+      </main>
+      <Footer/>
+    </div>
   )
 }

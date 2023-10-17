@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className={styles.header}>
         <div>
-        <Image src={'/baska.png'} width={58} height={58} ></Image>
+        <Image src={'/'} width={58} height={58} ></Image>
         </div>
         <div>
             <Link className={styles.links} href={'/'}>Home</Link>
